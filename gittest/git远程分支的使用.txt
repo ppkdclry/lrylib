@@ -9,3 +9,7 @@ git fetch lrylib
 
 #查看远程仓库——将显示跟踪的远程分支的信息
 git remote show lrylib
+
+#推送本地仓库[localbranch]到远程仓库[remote]的[serverbranch]分支
+git push [remote] [localbranch]:[serverbranch]
+e.g:git push lrylib OpGit:OpGit1
