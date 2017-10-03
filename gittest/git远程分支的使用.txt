@@ -1,0 +1,15 @@
+#添加远程分支
+git remote add lrylib https://github.com/ppkdclry/lrylib.git
+
+#查看远程分支
+git remote -v
+
+#获取远程分支数据，将远程分支有的当前没有取下来
+git fetch lrylib
+
+#查看远程仓库——将显示跟踪的远程分支的信息
+git remote show lrylib
+
+#推送本地仓库[localbranch]到远程仓库[remote]的[serverbranch]分支
+git push [remote] [localbranch]:[serverbranch]
+e.g:git push lrylib OpGit:OpGit1
