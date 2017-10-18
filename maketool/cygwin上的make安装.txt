@@ -1,0 +1,10 @@
+在安装cyginwin时忘记安装make工具，所以无法使用make命令。以下方法用于安装make工具
+
+前提条件：cygwin中有gcc
+
+1、先去http://ftp.gnu.org/gnu/make/上下载一个make-4.2.tar.gz
+2、解压tar -xzf make-4.2.tar.gz
+3、./configure	//由于c编写的程序必须在本机上重新编译链接，配置本机的build.sh
+4、./build.sh	//编译安装
+5、mv make.exe /bin
+6、用make -v测试安装是否完成
