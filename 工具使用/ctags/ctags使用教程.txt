@@ -1,0 +1,35 @@
+[生成tags文件]
+递归地为当前目录及子目录下的所有代码文件生成tags文件
+$ ctags -R
+为某些源代码生成tags文件，使用如下命令
+$ ctags filename.c file.h
+$ ctags *.c *.h
+
+使字段补全有效，在生成tags时需要一些额外的参数，推荐的c++参数主要是：
+ctags -R --c++-kinds=+px --fields=+iaS --extra=+q
+其中：
+c++-kinds用于指定C++语言的tags记录类型，--c-kinds用于指定c语言的
+
+[配置]
+在vim打开源码时，指定tags文件，若要引用多个不同目录的tags文件，可以用逗号隔开
+:set tags=./tags
+或者在~/.vimrc中加入一行配置
+set tags=[path]tags
+若要加入系统函数或者全局变量的tag标签，则执行：
+ctags -I __THROW -file-scope=yes -langmap=c:+.h -languages=c,c++ -links=yes -c-kinds=+p --fields=+S -R -f ~/.vim/systags /usr/include /usr/local/include
+set tags+=~/.vim/systags
+在不同工程里查阅代码，则在~/vimrc中添加:
+set tags=tags;
+set autochdir
+
+[使用]
+跳转到变量或函数的定义处，或者用命令
+Ctrl + ]
+:ta name
+返回到跳转前的位置
+Ctrl + o/t
+找到函数[myAdd]所在文件
+$ vim -t myAdd
+光标处标签定义的列表
+:tags
+:ts name
