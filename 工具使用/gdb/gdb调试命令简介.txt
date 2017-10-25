@@ -1,0 +1,20 @@
+[gdb的功能]
+1、启动程序，按照你的自定义要求启动运行程序。
+2、可以将调试的程序停在断点处，断点可以是条件表达式
+3、当程序停住时，可以检查程序的运行状态信息
+4、动态改变你的程序执行环境
+
+[gdb命令简介]
+gdb [program]					——调试program程序(在shell中键入)
+(gdb)l							——l命令是list的缩写，从第一行开始列出源代码
+(gdb)[ENTER]					——直接回车表示重复上一次命令
+(gdb)break [line_no]			——在源程序第16行出设置断点
+(gdb)break [func]				——在源程序函数func入口处设置断点
+(gdb)info break					——查看断点信息
+(gdb)r							——运行程序，run命令的简写
+(gdb)n							——单条语句执行，next命令简写
+(gdb)c							——继续运行程序，continue命令简写
+(gdb)p info						——打印变量i的值，print命令的简写
+(gdb)bt							——查看函数堆栈
+(gdb)finish						——退出函数
+(gdb)q							——退出gdb
