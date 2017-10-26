@@ -1,0 +1,18 @@
+[下载安装gdb脚本]
+stl-views.gdb
+
+[启动gdb，并包含gdb脚本]
+(gdb)source stl-views.gdb
+
+[上述步骤可以利用下面方式默认配置]
+将stl-views.gdb放到用户目录下改名为.gdbinit
+
+[命令帮助]
+(gdb)help [pvector|plist|pmap|pset|pdequeue|pstack|pqueue|ppqueue|pbitset|pstring|pwstring]
+
+
+[使用示例]
+有如下map定义
+std::map<int,string> map_name;
+可以使用如下命令查看map_name中的前20条内容
+(gdb)pmap map_name int string 20
