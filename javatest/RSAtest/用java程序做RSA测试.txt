@@ -1,0 +1,26 @@
+[java的配置]
+1.在%JAVA_HOME%/jre/lib/ext下找到第三方安全库，比如/jre/lib/ext/sunjce_provider.jar
+2.将第三方库添加进%JAVA_HOME%/jre/lib/security下的java.security文件中，比如
+	security.provider.5=com.sun.crypto.provider.SunJCE
+3.在环境变量中添加CLASS_PATH=%CLASS_PATH%;%JAVA_HOME%/jre/lib/ext/sunjce_provider.jar
+
+[编写java源代码，具体见RSATest.java]
+
+[编译运行]
+javac RSATest.java
+java RSATest
+
+[输出分析]
+publicKey:30819f300d06092a864886f70d010101050003818d0030818902818100829b1516cc9c6224e9f458729baa68d64914f9d88f50a60ace1ee17bc08bf0d0062d8ca76129e25276d690c3bc863f7020a9a385a41c1c8cb2fb01a700520336386feef8688f7a174f29751b031c795d9a60daabe30a5f1d9458682ffff1470572fe318b7a048b20a29945a7aba66bb9adbc47172eb97bbf01edff989b46637b0203010001
+
+[publicKey的格式如下]
+Tag 	      		| 名称 				| 长度 		|
+	30	      		| Sequence组合类型	| 819f(159)	|
+	| 	30	  		| Sequence组合类型 	| 0d(13)	|
+	|	 | 06 		| 对象标识ObjectID 	| 09(9)		|
+	|	 | 05 		| 空类型			| 00(0)		|
+	| 03 	  		| 比特流bit String  | 818d(141) |
+	|    | 00 		| BER保留			|			|
+	|	 | 30 		| Sequence组合类型 	| 8189(137) |
+	|	 |    | 02  | 整形INTEGER		| 8181(129)	|
+	|    |    | 02  | 整形INTEGER		| 03(3)     |
