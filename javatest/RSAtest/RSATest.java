@@ -26,6 +26,7 @@ public class RSATest{
 				PublicKey publicKey = keyPair.getPublic();
 				PrivateKey privateKey = keyPair.getPrivate();
 				System.out.println("publicKey:" + bytesToHexString(publicKey.getEncoded()));
+				System.out.println("privateKey:" + bytesToHexString(privateKey.getEncoded()));
 			}
 		}catch(NoSuchAlgorithmException e){
 			e.printStackTrace();
