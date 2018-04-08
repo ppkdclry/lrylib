@@ -1,0 +1,1 @@
+javadoc -d apidoc -author -version -windowtitle Applet–°≥Ã–Ú≤‚ ‘ HelloWorldApplet.java
